@@ -1,0 +1,47 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <header class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Bienvenido</h3>
+                    </header>
+                    <div class="panel-body p-3">
+                        <form role="form" [formGroup]="loginForm">
+                            <div class="form-group pt-3">
+                                <label for="emailInput">Correo Electrónico</label>
+                                <div class="input-field" [class.error]="loginForm.controls['username_email'].dirty && loginForm.hasError('required','username_email')">
+                                    <input formControlName="username_email" type="email" id="emailInput" placeholder="nombre@correoelectronico.com">
+                                </div>
+                            </div>
+                            <small *ngIf="loginForm.controls['username_email'].dirty && loginForm.hasError('required','username_email')" class="text-danger">*Este campo es requerido</small>
+                            <div class="form-group pt-3">
+                                <label for="passwordInput">Contraseña</label>
+                                <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                    <input formControlName="password" [type]="type" id="passwordInput" placeholder="Introduce tu contraseña">
+                                    <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Este campo es requerido</small>
+                            <div class="form-inline fr mt-4">
+                                <a href="#" id="forget" class="font-weight-bold">¿Olvidaste la contraseña?</a>
+                            </div>
+                            <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Iniciar sesión</button>
+                            <footer class="text-center pt-4 text-muted">
+                                ¿Es la primera vez que usas Oidorcursos? <a id="forget"
+                                    routerLink="/signup">Regístrate</a>
+                            </footer>
+                        </form>
+                    </div>
+                    <div class="mx-3 my-2 py-2 bordert">
+                        <div class="text-center py-3">
+                            <a href="https://www.facebook.com/" target="_blank" class="px-2"><img src="https://www.freepnglogos.com/uploads/facebook-logo-14.png" alt=""></a>
+                            <a href="https://www.google.com/" target="_blank" class="px-2"><img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png" alt=""></a>
+                            <a href="https://appleid.apple.com" target="_blank" class="px-2"><img src="https://www.freepnglogos.com/uploads/apple-logo-png/file-apple-logo-black-svg-wikimedia-commons-1.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

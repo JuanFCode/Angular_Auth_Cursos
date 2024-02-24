@@ -1,0 +1,61 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <header class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Regístrate</h3>
+                        <p class="pt-3 font-weight-bold">Aprende a tu propio ritmo</p>
+                    </header>
+                    <div class="panel-body p-3">
+                        <form role="form" [formGroup]="signupForm">
+                            <div class="form-group pt-3">
+                                <label for="nameInput">Nombre</label>
+                                <div class="input-field" [class.error]="signupForm.controls['name'].dirty && signupForm.hasError('required','name')">
+                                    <input formControlName="name" type="text" id="nameInput" placeholder="Ingresa tu nombre completo">
+                                </div>
+                            </div>
+                            <small *ngIf="signupForm.controls['name'].dirty && signupForm.hasError('required','name')" class="text-danger">*Este campo es requerido</small>
+                            <div class="form-group pt-3">
+                                <label for="lastnameInput">Apellido</label>
+                                <div class="input-field" [class.error]="signupForm.controls['lastName'].dirty && signupForm.hasError('required','lastName')">
+                                    <input formControlName="lastName" type="text" id="lastnameInput" placeholder="Ingresa tu apellido completo">
+                                </div>
+                            </div>
+                            <small *ngIf="signupForm.controls['lastName'].dirty && signupForm.hasError('required','lastName')" class="text-danger">*Este campo es requerido</small>
+
+                            <div class="form-group pt-3">
+                                <label for="emailInput">Correo Electrónico</label>
+                                <div class="input-field" [class.error]="signupForm.controls['email'].dirty && signupForm.hasError('required','email')">
+                                    <input formControlName="email" type="email" id="emailInput" placeholder="nombre@correoelectronico.com">
+                                </div>
+                            </div>
+                            <small *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')" class="text-danger">*Este campo es requerido</small>
+
+                            <div class="form-group pt-3">
+                                <label for="passwordInput">Contraseña</label>
+                                <div class="input-field" [class.error]="signupForm.controls['password'].dirty && signupForm.hasError('required','password')">
+                                    <input formControlName="password" [type]="type" id="passwordInput" placeholder="Introduce tu contraseña">
+                                    <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            <small *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')" class="text-danger">*Este campo es requerido</small>
+
+                            <button type="submit" class="btn btn-primary btn-block mt-4 w-100" (click)="onSingup()">Únete de forma gratuita</button>
+                            <footer class="text-center pt-4 text-muted">
+                                ¿Ya formas parte de Oidorcursos? <a id="forget"
+                                    routerLink="/login">Iniciar sesión</a>
+                            </footer>
+                        </form>
+                    </div>
+                    <div class="mx-3 my-2 py-2 bordert">
+                        <div class="text-center py-3">
+                            <a href="https://www.facebook.com/" target="_blank" class="px-2"><img src="https://www.freepnglogos.com/uploads/facebook-logo-14.png" alt=""></a>
+                            <a href="https://www.google.com/" target="_blank" class="px-2"><img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
